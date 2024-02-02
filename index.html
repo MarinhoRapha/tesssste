@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+	<meta name="author" content="Marinho">
+	<meta name="keywords" content="palavras,separadas,por,virgula">
+	<meta name="description" content="descricao do site">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<title>Testeeeeee</title>
+	
+</head>
+<body>
+	    <div id="question">Manda Foto da Teta?</div>
+    <div id="options">
+        <div id="noContainer">
+            <button id="no" class="button">Não</button>
+            <a href="https://youtu.be/p5fnHWznTBQ"><button id="yes" class="button">Sim</button></a>
+        </div>
+    </div>
+    <script>
+        var noButton = document.getElementById("no");
+        var noContainer = document.getElementById("noContainer");
+
+        function moveNoButton() {
+            var containerWidth = noContainer.offsetWidth - noButton.offsetWidth;
+            var containerHeight = noContainer.offsetHeight - noButton.offsetHeight;
+
+            var newLeft = Math.random() * containerWidth;
+            var newTop = Math.random() * containerHeight;
+
+            newLeft = Math.max(newLeft, 0);
+            newLeft = Math.min(newLeft, containerWidth);
+            newTop = Math.max(newTop, 0);
+            newTop = Math.min(newTop, containerHeight);
+
+            noButton.style.transform = `translate(${newLeft}px, ${newTop}px)`;
+        }
+
+        noButton.addEventListener("mouseover", moveNoButton);
+
+        noButton.addEventListener("mouseleave", function () {
+            setTimeout(moveNoButton, 1000);
+        });
+    </script>
+</body>
+</html>
